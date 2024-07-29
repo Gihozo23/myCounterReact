@@ -44,7 +44,34 @@ function Controlled() {
               </button>
         </form>
     )
-    
+    //using useForm custom hook rather than useState for lesser code
+//     const {register, handleSubmit} = useForm("trial")
+//   return (
+//       <form
+//           onSubmit={handleSubmit(data => console.log(data))}
+//           className="flex flex-col items-center justify-center bg-pink-50 pt-14">
+//           <label
+//               htmlFor="name">
+//               Name
+//           </label>
+//           <input
+//               {...register("name")}
+//               type="text"
+//               name="name"/>
+//           <label
+//               htmlFor="age">
+//               Age
+//           </label>
+//           <input
+//               {...register("age")}
+//               type="number"
+//               name="age" />
+//           <button
+//               className='rounded bg-blue-500 mt-6 h-7 w-24'>
+//               submit
+//           </button>
+//         </form>
+//   )
 }
 
 export default Controlled
