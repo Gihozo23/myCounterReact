@@ -19,7 +19,7 @@ function Controlled() {
 //This function will manage all the changes in our input elements using the name attribute that we passed to our element
     function handleChange(event) {
         setPerson(previousValue => {
-            return { ...person, [event.target.name] : event.target.value }
+            return { ...previousValue, [event.target.name] : event.target.value }
         })
 };
         
@@ -35,7 +35,9 @@ function Controlled() {
           <input
               onChange={handleChange}
               type="text"
-              name="name"/>
+              name="name"
+              //When you add the value like it makes it to totally be controlled by React
+              value={person.name} />
           <label
               htmlFor="age">
               Age
@@ -43,7 +45,8 @@ function Controlled() {
           <input
               onChange={handleChange}
               type="number"
-              name="age" />
+              name="age"
+              value={person.age} />
           <button
               className='rounded bg-blue-500 mt-6 h-7 w-24'>
               submit
