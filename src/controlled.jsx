@@ -16,6 +16,14 @@ function Controlled() {
         console.log(person)
 
     }
+//This function will manage all the changes in our input elements using the name attribute that we passed to our element
+    function handleChange(event) {
+        setPerson(previousValue => {
+            return { ...person, [event.target.name] : event.target.value }
+        })
+};
+        
+    
   return (
       <form
           onSubmit={handleSubmit}
@@ -25,8 +33,7 @@ function Controlled() {
               Name
           </label>
           <input
-              value={person.name}
-              onChange={(event) => setPerson({ ...person, name: event.target.value })}
+              onChange={handleChange}
               type="text"
               name="name"/>
           <label
@@ -34,8 +41,7 @@ function Controlled() {
               Age
           </label>
           <input
-              value={person.age}
-              onChange={(event) => setPerson({ ...person, age: event.target.value })}
+              onChange={handleChange}
               type="number"
               name="age" />
           <button
